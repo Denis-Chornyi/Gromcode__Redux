@@ -11,9 +11,7 @@ export const decrement = () => ({
   type: DECREMENT
 });
 
-const initialState = 0;
-
-const counterReducer = (state = initialState, action) => {
+const counterReducer = (state = 0, action) => {
   switch (action.type) {
     case INCREMENT:
       return state + 1;

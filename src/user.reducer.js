@@ -1,6 +1,6 @@
 import { ADD_USER, REMOVE_USER } from './user.actions.js';
 const initialState = {
-  users: null
+  users: []
 };
 
 const cartReducer = (state = initialState, action) => {

@@ -12,7 +12,7 @@ export const addUser = userData => {
 
 export const removeUser = userId => {
   return {
-    type: DELETE_USER,
+    type: REMOVE_USER,
     payload: {
       userId
     }

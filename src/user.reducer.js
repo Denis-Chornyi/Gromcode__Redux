@@ -1,24 +1,24 @@
 import { SET_USER, REMOVE_USER } from './user.actions.js';
 
 const initialState = {
-  users: []
+  user: []
 };
 
-const usersReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
       return {
         ...state,
-        users: [...state.users, action.payload]
+        user: [...state.user, action.payload]
       };
     case REMOVE_USER:
       return {
         ...state,
-        users: state.users.filter(user => user.id !== action.payload)
+        user: []
       };
     default:
       return state;
   }
 };
 
-export default usersReducer;
+export default userReducer;

@@ -5,20 +5,16 @@ const initialState = {
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_PRODUCT: {
+    case ADD_PRODUCT:
       return {
         ...state,
-        products: state.products.concat(action.payload.cartData)
+        products: [...state.products, action.payload]
       };
-    }
-    case REMOVE_PRODUCT: {
-      const newList = state.products.filter(product => product.id !== action.payload.productId);
+    case REMOVE_PRODUCT:
       return {
         ...state,
-        products: newList
+        products: state.products.filter(product => product.id !== action.payload)
       };
-    }
-
     default:
       return state;
   }

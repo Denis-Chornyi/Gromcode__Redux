@@ -1,4 +1,4 @@
-import { store } from './store.js';
+import store from './store.js';
 import { addUser, removeUser } from './user.actions.js';
 import { addProduct, removeProduct } from './cart.actions.js';
 import { setLanguage } from './language.actions.js';

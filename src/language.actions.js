@@ -2,20 +2,8 @@ export const EN = 'LANGUAGE/EN';
 export const ES = 'LANGUAGE/ES';
 export const JP = 'LANGUAGE/JP';
 
-export const languageEn = () => {
+export const setLanguage = language => {
   return {
-    type: EN
-  };
-};
-
-export const languageEs = () => {
-  return {
-    type: ES
-  };
-};
-
-export const languageJp = () => {
-  return {
-    type: JP
+    type: language === 'en' ? EN : language === 'es' ? ES : JP
   };
 };

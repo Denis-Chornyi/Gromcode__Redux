@@ -23,11 +23,6 @@ const UsersList = ({ users, currentPage, itemsPerPage, setPage }) => {
 
   return (
     <div>
-      <ul className="users">
-        {usersToDisplay.map(user => (
-          <Users key={user.id} name={user.name} age={user.age} />
-        ))}
-      </ul>
       <Pagination
         goPrev={goPrev}
         goNext={goNext}
@@ -35,6 +30,11 @@ const UsersList = ({ users, currentPage, itemsPerPage, setPage }) => {
         totalItems={users.length}
         itemsPerPage={itemsPerPage}
       />
+      <ul className="users">
+        {usersToDisplay.map(user => (
+          <Users key={user.id} name={user.name} age={user.age} />
+        ))}
+      </ul>
     </div>
   );
 };

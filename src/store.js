@@ -1,17 +1,6 @@
-import { createStore, combineReducers } from 'redux';
-import { languageReducer } from './language.reducer.js';
-import userReducer from './user.reducer.js';
-import cartReducer from './cart.reducer.js';
+import { createStore } from 'redux';
+import counterReducer from './counter.reducer';
 
-const appReducer = combineReducers({
-  language: languageReducer,
-  user: userReducer,
-  cart: cartReducer
-});
+const store = createStore(counterReducer);
 
-const store = createStore(
-  appReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
-export default store
+export default store;

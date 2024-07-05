@@ -15,7 +15,8 @@ const UsersList = ({ users, currentPage, itemsPerPage, setPage }) => {
   };
 
   const goNext = () => {
-    if (currentPage < Math.ceil(users.length / itemsPerPage) - 1) {
+    const totalPages = Math.ceil(users.length / itemsPerPage);
+    if (currentPage < totalPages - 1) {
       setPage(currentPage + 1);
     }
   };

@@ -1,7 +1,10 @@
-import { ADD_USER, DELETE_USER } from './users.actions.js';
+import { users } from './userList.js';
+import { ADD_USER } from './users.actions.js';
 
 const initialState = {
-  usersList: []
+  usersList: users,
+  currentPage: 0,
+  itemsPerPage: 3
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -10,13 +13,6 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         usersList: state.usersList.concat(action.payload.userData)
-      };
-    }
-    case DELETE_USER: {
-      const newList = state.usersList.filter(user => user.id !== action.payload.userId);
-      return {
-        ...state,
-        usersList: newList
       };
     }
     default:

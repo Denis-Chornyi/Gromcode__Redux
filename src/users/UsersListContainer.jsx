@@ -1,31 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UsersList from './UsersList';
+import { setPage } from './users.actions';
 
 class UsersListContainer extends React.Component {
-  state = {
-    currentPage: 0,
-    itemsPerPage: 3
-  };
-
   goPrev = () => {
-    if (this.state.currentPage > 0) {
-      this.setState({ currentPage: this.state.currentPage - 1 });
+    if (this.props.currentPage > 0) {
+      this.props.setPage(this.props.currentPage - 1);
     }
   };
 
   goNext = () => {
-    if (
-      this.state.currentPage <
-      Math.ceil(this.props.usersList.length / this.state.itemsPerPage) - 1
-    ) {
-      this.setState({ currentPage: this.state.currentPage + 1 });
+    if (this.props.currentPage < Math.ceil(this.props.usersList.length / this.props.itemsPerPage) - 1) {
+      this.props.setPage(this.props.currentPage + 1);
     }
   };
 
   render() {
-    const { usersList } = this.props;
-    const { currentPage, itemsPerPage } = this.state;
+    const { usersList, currentPage, itemsPerPage } = this.props;
 
     return (
       <UsersList
@@ -41,7 +33,13 @@ class UsersListContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  usersList: state.users.usersList
+  usersList: state.users.usersList,
+  currentPage: state.users.currentPage,
+  itemsPerPage: 3
 });
 
-export default connect(mapStateToProps)(UsersListContainer);
+const mapDispatchToProps = {
+  setPage
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersListContainer);

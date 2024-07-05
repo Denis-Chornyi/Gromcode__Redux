@@ -1,10 +1,8 @@
-import { users } from './userList.js';
-import { ADD_USER } from './users.actions.js';
+import { ADD_USER, SET_PAGE } from './users.actions';
 
 const initialState = {
-  usersList: users,
-  currentPage: 0,
-  itemsPerPage: 3
+  usersList: [],
+  currentPage: 0
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -15,6 +13,11 @@ const usersReducer = (state = initialState, action) => {
         usersList: state.usersList.concat(action.payload.userData)
       };
     }
+    case SET_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload.page
+      };
     default:
       return state;
   }

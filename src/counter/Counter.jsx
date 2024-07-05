@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as counterActionc from '../counter.actions';
+import * as counterActionc from './counter.actions';
 
 const Counter = ({ counter, increment, decrement, reset }) => {
   return (
@@ -32,6 +32,6 @@ const mapDispatch = {
   reset: counterActionc.reset
 };
 
-const connector = connect(mapState, mapDispatch); 
+const connector = connect(mapState, mapDispatch);
 
 export default connector(Counter);

@@ -15,7 +15,7 @@ export const selectedOptionsSelector = createSelector(
   }
 );
 
-export const avialableOptionsSelector = createSelector(
+export const availableOptionsSelector = createSelector(
   [optionsListSelector, selectedIdSelector],
   (allOptionsList, selectedIds) => {
     return allOptionsList.filter(option => !selectedIds.includes(option.id));

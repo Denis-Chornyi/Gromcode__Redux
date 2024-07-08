@@ -1,11 +1,11 @@
 import React from 'react';
-import AvialableOptions from './AvialableOptions';
+import AvailableOptions from './AvailableOptions';
 import SelectedOptions from './SelectedOptions';
 
 const TransferList = () => {
   return (
     <div className="transfer-list">
-      <AvialableOptions title="Available option" />
+      <AvailableOptions title="Available option" />
       <SelectedOptions title="Selected option" />
     </div>
   );

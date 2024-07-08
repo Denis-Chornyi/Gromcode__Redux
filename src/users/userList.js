@@ -21,12 +21,12 @@ export const users = [
   },
   {
     id: 'id-4',
-    age: 45,
+    age: 55,
     name: 'Franklin'
   },
   {
     id: 'id-5',
-    age: 45,
+    age: 35,
     name: 'John'
   },
   {
@@ -36,22 +36,22 @@ export const users = [
   },
   {
     id: 'id-7',
-    age: 45,
+    age: 25,
     name: 'Pol'
   },
   {
     id: 'id-8',
-    age: 45,
+    age: 33,
     name: 'Ron'
   },
   {
     id: 'id-9',
-    age: 45,
+    age: 41,
     name: 'Harry'
   },
   {
     id: 'id-10',
-    age: 45,
+    age: 44,
     name: 'Anna'
   }
 ];

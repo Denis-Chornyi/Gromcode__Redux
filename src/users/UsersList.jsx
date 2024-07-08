@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Users from './Users';
+import User from './User';
 import Pagination from './Pagination';
 import { setPage } from './users.actions';
 
@@ -32,7 +32,7 @@ const UsersList = ({ users, currentPage, itemsPerPage, setPage }) => {
       />
       <ul className="users">
         {usersToDisplay.map(user => (
-          <Users key={user.id} name={user.name} age={user.age} />
+          <User key={user.id} name={user.name} age={user.age} />
         ))}
       </ul>
     </div>

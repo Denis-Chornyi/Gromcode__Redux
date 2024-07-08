@@ -13,37 +13,48 @@ body {
   align-items: center;
 }
 
-.transfer-list {
-  display: flex;
+.users {
+  list-style-type: none;
+  padding: 0;
 }
 
-.options {
-  width: 260px;
-  padding: 16px;
+.user {
+  margin: 8px;
+  display: flex;
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    padding: 0;
-    margin: 16px 0;
+  &__age {
+    font-weight: 700;
+    opacity: 0.5;
+    margin-left: auto;
   }
+}
 
-  &__title {
-    text-align: center;
-    background-color: #000;
-    color: #fff;
-    border-radius: 8px;
-    line-height: 24px;
-  }
+.filter {
+  display: flex;
+  height: 32px;
 
-  &__list-item {
-    background: transparent;
-    margin: 8px 0;
-    width: 100%;
+  &__input {
+    flex: 1;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 3px solid #ff7f50;
+    border-left: none;
+    padding: 8px;
+    font-size: 24px;
     outline: none;
-    cursor: pointer;
-    line-height: 24px;
-    border-radius: 8px;
+  }
+
+  &__count {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 3px solid #ff7f50;
+    border-right: none;
+    width: 40px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: #ff7f50;
+    color: #fff;
   }
 }

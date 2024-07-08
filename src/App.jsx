@@ -1,12 +1,12 @@
 import React from 'react';
+import UsersList from './users/UsersList';
 import { Provider } from 'react-redux';
 import store from './store';
-import TransferList from './options/TransferList';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <TransferList />
+      <UsersList />
     </Provider>
   );
 };

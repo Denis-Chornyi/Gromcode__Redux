@@ -2,30 +2,30 @@ import React from 'react';
 import { connect } from 'react-redux';
 import User from './User';
 import Pagination from './Pagination';
-import { setPage } from './users.actions';
+import { goNext, goPrev } from './users.actions';
 
-const UsersList = ({ users, currentPage, itemsPerPage, setPage }) => {
+const UsersList = ({ users, currentPage, itemsPerPage, goNext, goPrev }) => {
   const startIndex = currentPage * itemsPerPage;
   const usersToDisplay = users.slice(startIndex, startIndex + itemsPerPage);
 
-  const goPrev = () => {
+  const handlePrevClick = () => {
     if (currentPage > 0) {
-      setPage(currentPage - 1);
+      goPrev();
     }
   };
 
-  const goNext = () => {
+  const handleNextClick = () => {
     const totalPages = Math.ceil(users.length / itemsPerPage);
     if (currentPage < totalPages - 1) {
-      setPage(currentPage + 1);
+      goNext();
     }
   };
 
   return (
     <div>
       <Pagination
-        goPrev={goPrev}
-        goNext={goNext}
+        goPrev={handlePrevClick}
+        goNext={handleNextClick}
         currentPage={currentPage}
         totalItems={users.length}
         itemsPerPage={itemsPerPage}
@@ -46,7 +46,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  setPage
+  goNext,
+  goPrev
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersList);

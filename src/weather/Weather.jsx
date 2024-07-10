@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { weatherDataSelector } from './weather.selector';
-import { fetchUserData } from './weather.actions';
+import { fetchWeatherData } from './weather.actions';
 
-const Weather = ({ weatherData, fetchUserData }) => {
+const Weather = ({ weatherData, fetchWeatherData }) => {
   useEffect(() => {
-    fetchUserData();
-  }, [fetchUserData]);
+    fetchWeatherData();
+  }, [fetchWeatherData]);
 
   if (!weatherData) {
     return <div>Loading...</div>;
@@ -34,7 +34,7 @@ const mapState = state => {
 };
 
 const mapDispatch = {
-  fetchUserData
+  fetchWeatherData
 };
 
 export default connect(mapState, mapDispatch)(Weather);

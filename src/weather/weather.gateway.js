@@ -1,12 +1,10 @@
 const babelUrl = 'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/cities';
 
 export const getWeatherData = () => {
-  return fetch(babelUrl)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error();
-    })
-    
+  return fetch(babelUrl).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Network response was not ok.');
+  });
 };

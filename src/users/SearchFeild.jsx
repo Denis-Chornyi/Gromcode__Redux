@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as usersActions from './users.actions';
 
-class SearchFeild extends React.PureComponent {
+class SearchField extends React.PureComponent {
   state = {
     userName: ''
   };
@@ -32,7 +32,7 @@ class SearchFeild extends React.PureComponent {
   }
 }
 
-SearchFeild.propTypes = {
+SearchField.propTypes = {
   fetchUserData: PropTypes.func.isRequired
 };
 
@@ -40,4 +40,4 @@ const mapDispatch = {
   fetchUserData: usersActions.fetchUserData
 };
 
-export default connect(null, mapDispatch)(SearchFeild);
+export default connect(null, mapDispatch)(SearchField);

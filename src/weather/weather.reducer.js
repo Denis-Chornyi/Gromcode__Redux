@@ -1,10 +1,10 @@
 import { WEATHER_DATA } from './weather.actions';
 
-const initialData = {
+const initialState = {
   weatherData: null
 };
 
-const weatherReducer = (state = initialData, action) => {
+const weatherReducer = (state = initialState, action) => {
   switch (action.type) {
     case WEATHER_DATA: {
       return {

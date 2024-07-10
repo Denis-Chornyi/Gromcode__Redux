@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import usersReducer from './users/users.reducer';
-import thunk from 'redux-thunk';
+import { thunk } from 'redux-thunk';
+import weatherReducer from './weather/weather.reducer';
 
 const logger = store => next => action => {
   console.group(action.type);
@@ -12,7 +12,7 @@ const logger = store => next => action => {
 };
 
 const reducer = combineReducers({
-  users: usersReducer
+  cities: weatherReducer
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

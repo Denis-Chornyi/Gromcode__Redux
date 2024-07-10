@@ -23,11 +23,9 @@ const Weather = ({ weatherData, fetchWeatherData }) => {
   );
 };
 
-const mapState = state => {
-  return {
-    weatherData: weatherDataSelector(state)
-  };
-};
+const mapState = state => ({
+  weatherData: weatherDataSelector(state)
+});
 
 const mapDispatch = {
   fetchWeatherData

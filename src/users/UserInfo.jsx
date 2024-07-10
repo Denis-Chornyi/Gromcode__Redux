@@ -18,7 +18,7 @@ const UserInfo = ({ userData, isFetching }) => {
       <img src={userData.avatar_url} alt="User Avatar" className="user__avatar" />
       <div className="user__info">
         <span className="user__name">{userData.name}</span>
-        <span className="user__location">{`from ${userData.location}`}</span>
+        <span className="user__location">{userData.location}</span>
       </div>
     </div>
   );

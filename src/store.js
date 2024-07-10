@@ -1,18 +1,13 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import counterReducer from './components/counter.reducer';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import usersReducer from './users/users.reducer';
+import { thunk } from 'redux-thunk'; 
 
-const logger = store => next => action => {
-  console.group(action.type);
-  console.info('dispatching', action);
-  const result = next(action);
-  console.log('new state', store.getState());
-  console.groupEnd();
+const reducer = combineReducers({
+  users: usersReducer
+});
 
-  return result;
-};
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
-
-const store = createStore(counterReducer, composeEnhancer(applyMiddleware(logger)));
+const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)));
 
 export default store;

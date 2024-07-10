@@ -8,10 +8,6 @@ const Weather = ({ weatherData, fetchWeatherData }) => {
     fetchWeatherData();
   }, [fetchWeatherData]);
 
-  if (!weatherData) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <main className="weather">
       <h1 className="weather__title">Weather data</h1>

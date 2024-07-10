@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import usersReducer from './users/users.reducer';
-import { thunk } from 'redux-thunk';
+import thunk from 'redux-thunk';
 
 const logger = store => next => action => {
   console.group(action.type);

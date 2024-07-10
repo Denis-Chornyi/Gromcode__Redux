@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as usersActions from './users.actions';
-import { getUserData } from './users.gateway';
-import { fetchUserData } from './users.actions';
 
 class SearchFeild extends React.PureComponent {
   state = {
@@ -15,6 +13,7 @@ class SearchFeild extends React.PureComponent {
 
   handleUserSearch = () => {
     this.props.fetchUserData(this.state.userName);
+
   };
   render() {
     return (

@@ -8,7 +8,6 @@ const logger = store => next => action => {
   const result = next(action);
   console.log('new state', store.getState());
   console.groupEnd();
-
   return result;
 };
 

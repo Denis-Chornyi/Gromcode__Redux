@@ -5,7 +5,7 @@ export const USER_DATA_RECIEVED = 'USER_DATA_RECIEVED';
 
 export const showSpinner = () => {
   return {
-    type: 'SHOW_SPINER'
+    type: SHOW_SPINER
   };
 };
 

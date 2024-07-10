@@ -26,7 +26,11 @@ const UserInfo = ({ userData, isFetching }) => {
 
 UserInfo.propTypes = {
   isFetching: PropTypes.bool.isRequired,
-  userData: PropTypes.shape()
+  userData: PropTypes.shape({
+    avatar_url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired
+  })
 };
 
 UserInfo.defaultValue = {
@@ -35,8 +39,8 @@ UserInfo.defaultValue = {
 
 const mapState = state => {
   return {
-    isFetching: isFetchingSelector(state),
-    userData: userDataSelector(state)
+    userData: userDataSelector(state),
+    isFetching: isFetchingSelector(state)
   };
 };
 

@@ -1,8 +1,8 @@
 import { SHOW_SPINER, USER_DATA_RECIEVED } from './users.actions';
 
 const initialData = {
-  isFetching: false,
-  userData: null
+  userData: null,
+  isFetching: false
 };
 
 const usersReducer = (state = initialData, action) => {

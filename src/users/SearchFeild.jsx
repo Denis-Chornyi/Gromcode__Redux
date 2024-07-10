@@ -7,14 +7,15 @@ class SearchField extends React.PureComponent {
   state = {
     userName: ''
   };
+
   onChange = event => {
     this.setState({ userName: event.target.value });
   };
 
   handleUserSearch = () => {
     this.props.fetchUserData(this.state.userName);
-
   };
+
   render() {
     return (
       <div className="name-form">
@@ -25,7 +26,7 @@ class SearchField extends React.PureComponent {
           value={this.state.userName}
         />
         <button className="name-form__btn btn" onClick={this.handleUserSearch}>
-          Show
+          Показати
         </button>
       </div>
     );

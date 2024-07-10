@@ -1,6 +1,6 @@
 const babelUrl = 'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/cities';
 
-export const getWeatherData = () =>
+export const fetchWeatherData = () =>
   fetch(`${babelUrl}`).then(response => {
     if (response.ok) {
       return response.json();

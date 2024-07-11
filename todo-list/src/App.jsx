@@ -1,12 +1,12 @@
 import React from 'react';
+import TodoList from './tasks/components/TodoList';
 import { Provider } from 'react-redux';
 import store from './store';
-import Weather from './weather/Weather';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Weather />
+      <TodoList />
     </Provider>
   );
 };

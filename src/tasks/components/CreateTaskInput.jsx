@@ -35,10 +35,10 @@ class CreateTaskInput extends React.PureComponent {
 
 export default CreateTaskInput;
 
-// CreateTaskInput.propTypes = {
-//   value: PropTypes.string
-// };
+CreateTaskInput.propTypes = {
+  value: PropTypes.string
+};
 
-// CreateTaskInput.defaultProps = {
-//   value: ''
-// };
+CreateTaskInput.defaultProps = {
+  value: ''
+};
